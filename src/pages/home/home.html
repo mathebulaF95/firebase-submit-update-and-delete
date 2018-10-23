@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>home</ion-title>
+  </ion-navbar>
+ </ion-header>
+
+ <ion-content padding>
+ 
+  <div *ngIf="count === 1">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Cuisine</ion-label>
+        <ion-input type="text" [(ngModel)]="name"></ion-input>
+      </ion-item>
+    </ion-list>
+    <button ion-button  (click)="writeCuisine()">Submit</button>
+    <ion-list>
+      <ion-item *ngFor="let item of items" (click)="update(item)">
+        {{item?.name}}
+      </ion-item>
+    </ion-list>
+ 
+  </div>
+  
+    <button ion-button  (click)="perfomUpdate()">Update</button>
+    <button ion-button  (click)="delete()">Delete</button>
+
+  
+ </ion-content>
